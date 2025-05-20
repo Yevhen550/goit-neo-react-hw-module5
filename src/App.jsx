@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [user, setUser] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const username = searchParams.get("username");
+
+  useEffect(() => {
+    // Тут виконуємо асинхронну операцію,
+    // наприклад HTTP-запит за інформацією про користувача
+    if (username === "") return;
+
+    FakeAPI.getUser(username).then(setUser);
+  }, [username]);
+
+  const updateSearchParams = (key, value) => {
+    const updatedParams = new URLSearchParams(searchParams);
+    updatedParams.set(key, value);
+    setSearchParams(updatedParams);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    updateSearchParams("username", form.elements.username.value);
+    form.reset();
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="username" />
+        <button type="submit">Search</button>
+      </form>
+      {user && <UserInfo user={user} />}
     </>
-  )
-}
-
-export default App
+  );
+};

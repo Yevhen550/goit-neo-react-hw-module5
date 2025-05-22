@@ -1,0 +1,16 @@
+.navigation {
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 30px;
+  background-color: beige;
+}
+
+.active {
+  color: rgb(255, 255, 255);
+  background-color: tomato;
+  border-radius: 5px;
+  padding: 10px;
+}

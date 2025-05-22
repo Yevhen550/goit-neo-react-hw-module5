@@ -4,10 +4,11 @@ import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Navigation from "./components/Navigation/Navigation";
+import Container from "./components/Container/Container";
 
 function App() {
   return (
-    <div>
+    <Container>
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -15,7 +16,7 @@ function App() {
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </div>
+    </Container>
   );
 }
 

@@ -4,7 +4,7 @@ import s from "./Loader.module.css";
 const Loader = () => {
   return (
     <div className={s.loader}>
-      <BeatLoader size={35} color="rgb(238, 11, 246)" />
+      <BeatLoader size={35} color="rgb(11, 246, 23)" />
     </div>
   );
 };

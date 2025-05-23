@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import fetchPhotoCard from "../../API/tmdbApi";
+import fetchPhotoCard from "../../API/fetchMovies";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);

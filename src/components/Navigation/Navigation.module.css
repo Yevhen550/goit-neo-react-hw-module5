@@ -6,6 +6,9 @@
   gap: 15px;
   font-size: 30px;
   background-color: beige;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: var(--card-shadow);
 }
 
 .active {
@@ -13,4 +16,5 @@
   background-color: tomato;
   border-radius: 5px;
   padding: 10px;
+  box-shadow: var(--card-shadow);
 }

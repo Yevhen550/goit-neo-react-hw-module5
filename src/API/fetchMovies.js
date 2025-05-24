@@ -13,7 +13,7 @@ const fetchMovies = async (query, page = 1) => {
   };
 
   const res = await axios.get(url, options);
-  return res.data.results;
+  return res.data;
 };
 
 export default fetchMovies;

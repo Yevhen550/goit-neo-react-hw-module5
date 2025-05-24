@@ -17,8 +17,6 @@ const MovieReviews = lazy(() =>
 );
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
-console.log(fetchMovies("cars"));
-
 function App() {
   return (
     <Container>

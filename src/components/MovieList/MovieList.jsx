@@ -5,7 +5,7 @@ const MovieList = ({ movies }) => {
   const location = useLocation();
 
   return (
-    <ul className={s.list}>
+    <ol className={s.list}>
       {movies.map(({ id, title }) => (
         <li key={id}>
           <Link to={`/movies${id}`} state={location}>
@@ -13,7 +13,7 @@ const MovieList = ({ movies }) => {
           </Link>
         </li>
       ))}
-    </ul>
+    </ol>
   );
 };
 

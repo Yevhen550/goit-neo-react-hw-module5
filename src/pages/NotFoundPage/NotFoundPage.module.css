@@ -1,0 +1,8 @@
+.boxNotFound {
+  display: flex;
+  justify-content: start;
+}
+.notFoundText {
+  font-size: 25px;
+  color: tomato;
+}

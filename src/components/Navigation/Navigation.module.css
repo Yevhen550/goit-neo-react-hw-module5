@@ -18,3 +18,7 @@
   padding: 10px;
   box-shadow: var(--card-shadow);
 }
+
+.active:hover {
+  scale: 1.05;
+}

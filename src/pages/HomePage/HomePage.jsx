@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList/MovieList";
-import fetchMovies from "../../API/fetchMovies";
+import { fetchTrendingMovies } from "../../API/fetchMovies";
 import Loader from "../../components/Loader/Loader";
 
 const HomePage = () => {
@@ -12,8 +12,8 @@ const HomePage = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await fetchMovies("cars");
-        setMovies(res.results);
+        const data = await fetchTrendingMovies();
+        setMovies(data);
       } catch (error) {
         setError(error);
       } finally {

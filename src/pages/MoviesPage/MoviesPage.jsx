@@ -1,23 +1,35 @@
 import { useEffect, useState } from "react";
-import fetchPhotoCard from "../../API/fetchMovies";
+import { fetchTrendingMovies } from "../../API/fetchMovies";
+import MovieList from "../../components/MovieList/MovieList";
+import Loader from "../../components/Loader/Loader";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      // if (!query.trim()) return;
+    const fetchData = async () => {
       try {
-        const data = await fetchPhotoCard(query, page);
-        setMovies((prev) => [...prev, ...data.results]);
+        setLoading(true);
+        const data = await fetchTrendingMovies();
+        setMovies(data);
       } catch (error) {
-        console.log(error);
+        setError(error);
+      } finally {
+        setLoading(false);
       }
     };
-    fetchMovies();
+    fetchData();
   }, []);
 
-  return <div>MoviesPage</div>;
+  return (
+    <div>
+      {loading && <Loader />}
+      {error && <p>Something went wrong: {error.message}</p>}
+      {!loading && !error && <MovieList movies={movies} />}
+    </div>
+  );
 };
 
 export default MoviesPage;

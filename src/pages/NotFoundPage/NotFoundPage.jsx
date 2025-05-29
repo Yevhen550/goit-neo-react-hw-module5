@@ -2,7 +2,7 @@ import s from "./NotFoundPage.module.css";
 
 const NotFoundPage = () => {
   return (
-    <div>
+    <div className={s.boxNotFound}>
       <h1 className={s.notFoundText}>NotFoundPage</h1>
     </div>
   );

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchTrendingMovies } from "../../API/fetchMovies";
 import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
+import Title from "../../components/Title/Title";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -14,7 +15,6 @@ const HomePage = () => {
         setLoading(true);
         const data = await fetchTrendingMovies();
         setMovies(data);
-        console.log(data);
       } catch (error) {
         setError(
           `Oops... Something went wrong. The error encountered was: ${error.message}.`
@@ -28,6 +28,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <Title />
       {loading && <Loader />}
       {error && <ErrorMessage message={error} />}
       {!loading && !error && movies.length > 0 && <MovieList movies={movies} />}

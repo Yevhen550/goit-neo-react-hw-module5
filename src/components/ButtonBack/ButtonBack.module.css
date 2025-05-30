@@ -1,0 +1,21 @@
+.btnBack {
+  padding: 1em 1.8em;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  color: beige;
+  background: #000000;
+  font-weight: bolder;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: var(--card-shadow);
+}
+
+.btnBack:hover {
+  scale: 1.02;
+}

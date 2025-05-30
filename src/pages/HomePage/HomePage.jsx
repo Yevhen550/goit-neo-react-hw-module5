@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import MovieList from "../../components/MovieList/MovieList";
 import { fetchTrendingMovies } from "../../API/fetchMovies";
+import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
 
 const HomePage = () => {
@@ -14,8 +14,11 @@ const HomePage = () => {
         setLoading(true);
         const data = await fetchTrendingMovies();
         setMovies(data);
+        console.log(data);
       } catch (error) {
-        setError(error);
+        setError(
+          `Oops... Something went wrong. The error encountered was: ${error.message}.`
+        );
       } finally {
         setLoading(false);
       }
@@ -26,8 +29,8 @@ const HomePage = () => {
   return (
     <div>
       {loading && <Loader />}
-      {error && <p>Something went wrong: {error.message}</p>}
-      {!loading && !error && <MovieList movies={movies} />}
+      {error && <ErrorMessage message={error} />}
+      {!loading && !error && movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
 };

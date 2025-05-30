@@ -7,8 +7,8 @@ const MovieList = ({ movies }) => {
   return (
     <ol className={s.list}>
       {movies.map(({ id, title }) => (
-        <li key={id}>
-          <Link to={`/movies${id}`} state={location}>
+        <li key={id} className={s.movieItem}>
+          <Link to={`/movies/${id}`} state={location}>
             {title}
           </Link>
         </li>

@@ -23,7 +23,7 @@
   border: none;
   outline: none;
   color: beige;
-  background: #3b54ba;
+  background: var(--primary-dark);
   font-weight: bolder;
   cursor: pointer;
   position: relative;

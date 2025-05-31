@@ -1,0 +1,44 @@
+.movieCard {
+  display: block;
+  width: 200px;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  background-color: #2a0b1e;
+  transition: transform 0.3s ease;
+}
+
+.movieCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px var(--primary-dark);
+}
+
+.movieLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.movieImg {
+  width: 100%;
+  display: block;
+}
+
+.movieTitleBox {
+  padding: 0.8rem;
+  background-color: var(--bg-dark);
+}
+
+.movieTitle {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--primary);
+}
+
+.movieYear {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0.2rem 0 0 0;
+}

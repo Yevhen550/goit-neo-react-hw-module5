@@ -4,6 +4,13 @@
   --white-text-color: #83e87a;
   --dark-bg-img: #3f3c3c;
 
+  --bg-dark: #180212;
+  --primary: #f58dcf;
+  --primary-dark: #91106d;
+  --text-light: #eeeeee;
+  --accent: #f48ccc;
+  --border: #300524;
+
   --profile-stats-bg-color: #eee;
   --profile-stats-border-color: #ccc;
 
@@ -17,7 +24,7 @@
 
 body {
   margin: 0;
-  background-color: #c1cabb;
+  background-color: var(--bg-dark);
   /* background: url(./assets/body-min.jpg) no-repeat center center fixed;
   background-size: cover; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

@@ -5,15 +5,15 @@
   align-items: center;
   gap: 15px;
   font-size: 30px;
-  background-color: beige;
+  background-color: var(--primary-dark);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   box-shadow: var(--card-shadow);
 }
 
 .active {
-  color: rgb(255, 255, 255);
-  background-color: tomato;
+  color: var(--accent);
+  background-color: var(--border);
   border-radius: 5px;
   padding: 10px;
   box-shadow: var(--card-shadow);

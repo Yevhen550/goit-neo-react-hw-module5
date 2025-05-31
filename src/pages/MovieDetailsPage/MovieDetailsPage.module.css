@@ -1,0 +1,68 @@
+.detailsPage {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+.movieWrapper {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.poster {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px var(--primary-dark);
+}
+
+.movieInfo {
+  max-width: 600px;
+}
+
+.movieTitle {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.movieTitle span {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+.score {
+  color: var(--accent);
+  margin: 0.5rem 0;
+}
+
+.sectionHeading {
+  color: var(--accent);
+  margin-top: 1.5rem;
+}
+
+.additionalInfo {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.additionalInfo ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.additionalInfo li {
+  margin: 0.5rem 0;
+}
+
+.additionalInfo a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.additionalInfo a:hover {
+  color: var(--text-light);
+}

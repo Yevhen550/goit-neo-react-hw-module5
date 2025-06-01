@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieReviews } from "../../API/fetchMovies";
-import ReviewList from "../ReviewList/ReviewList";
+import MovieReviewsList from "../MovieReviewsList/MovieReviewsList";
 import ErrorMessage from "../Error/ErrorMessage";
 import Loader from "../Loader/Loader";
 
@@ -35,7 +35,7 @@ const MovieReviews = () => {
       {error.length === 0 && !loading && movieReviews.length === 0 ? (
         <ErrorMessage message={"We don't have any reviews for this movie."} />
       ) : (
-        <ReviewList reviews={movieReviews} />
+        <MovieReviewsList reviews={movieReviews} />
       )}
       {loading && <Loader />}
     </>

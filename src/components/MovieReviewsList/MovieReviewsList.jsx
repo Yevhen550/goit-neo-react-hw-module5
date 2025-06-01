@@ -1,6 +1,6 @@
-import s from "./ReviewList.module.css";
+import s from "./MovieReviewsList.module.css";
 
-const ReviewList = ({ reviews }) => {
+const MovieReviewsList = ({ reviews }) => {
   return (
     <ul className={s.reviewsContainer}>
       {reviews.map(({ id, author, content }) => (
@@ -13,4 +13,4 @@ const ReviewList = ({ reviews }) => {
   );
 };
 
-export default ReviewList;
+export default MovieReviewsList;

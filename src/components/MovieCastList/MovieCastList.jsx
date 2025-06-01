@@ -1,6 +1,6 @@
 import s from "./MovieCastList.module.css";
 
-const MovieCastList = ({ cast }) => {
+const MovieCastList = ({ cast = [] }) => {
   return (
     <ul className={s.castList}>
       {cast.map(({ cast_id, profile_path, name, character }) => (

@@ -32,14 +32,14 @@ const MovieCast = () => {
   return (
     <>
       {error.length > 0 && !loading && <ErrorMessage message={error} />}
-      {error.length === 0 && !loading && MovieCastList.length === 0 ? (
+      {!error && !loading && cast.length === 0 ? (
         <ErrorMessage
           message={
             "We don't have any information about the cast of this movie."
           }
         />
       ) : (
-        <MovieCastList cast={cast} />
+        !error && !loading && <MovieCastList cast={cast} />
       )}
       {loading && <Loader />}
     </>

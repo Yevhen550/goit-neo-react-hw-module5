@@ -1,16 +1,20 @@
-import { useEffect, useState } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
-import { fetchMovieDetails } from "../../API/fetchMovies";
+import { useEffect, useRef, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/Error/ErrorMessage";
-import ButtonBack from "../../components/ButtonBack/ButtonBack.jsx";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { fetchMovieDetails } from "../../API/fetchMovies";
+import ButtonBack from "../../components/ButtonBack/ButtonBack";
 import s from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const { movieId } = useParams();
+
+  const location = useLocation();
+  const backLinkRef = useRef(location.state?.from ?? "/movies");
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -33,7 +37,8 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={s.detailsPage}>
-      <ButtonBack />
+      <ButtonBack backLink={backLinkRef.current} />
+
       <div className={s.movieWrapper}>
         <img
           className={s.poster}
@@ -68,10 +73,14 @@ const MovieDetailsPage = () => {
         <h3>Additional information</h3>
         <ul>
           <li>
-            <Link to="cast">Cast</Link>
+            <Link to="cast" state={{ from: backLinkRef.current }}>
+              Cast
+            </Link>
           </li>
           <li>
-            <Link to="reviews">Reviews</Link>
+            <Link to="reviews" state={{ from: backLinkRef.current }}>
+              Reviews
+            </Link>
           </li>
         </ul>
         <Outlet />

@@ -1,10 +1,7 @@
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import s from "./ButtonBack.module.css";
 
-const ButtonBack = () => {
-  const location = useLocation();
-  const backLink = location.state?.from ?? "/movies";
-
+const ButtonBack = ({ backLink = "/movies" }) => {
   return (
     <Link to={backLink} className={s.btnBack}>
       ← Go back

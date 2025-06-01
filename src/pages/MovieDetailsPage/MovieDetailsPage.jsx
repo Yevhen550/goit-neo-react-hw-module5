@@ -1,18 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/Error/ErrorMessage";
-import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { fetchMovieDetails } from "../../API/fetchMovies";
-import ButtonBack from "../../components/ButtonBack/ButtonBack";
 import s from "./MovieDetailsPage.module.css";
+import ButtonBack from "../../components/ButtonBack/ButtonBack.jsx";
 
 const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const { movieId } = useParams();
-  const location = useLocation();
-  const backLinkRef = useRef(location.state);
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -35,10 +33,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={s.detailsPage}>
-      <Link to={backLinkRef.current ?? "/movies"}>
-        <ButtonBack />
-      </Link>
-
+      <ButtonBack />
       <div className={s.movieWrapper}>
         <img
           className={s.poster}

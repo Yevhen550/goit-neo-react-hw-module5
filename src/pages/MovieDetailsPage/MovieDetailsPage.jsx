@@ -12,7 +12,7 @@ const MovieDetailsPage = () => {
   const [error, setError] = useState(null);
   const { movieId } = useParams();
   const location = useLocation();
-  const previousLocationRef = useRef(location.state);
+  const backLinkRef = useRef(location.state);
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -35,7 +35,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={s.detailsPage}>
-      <Link to={previousLocationRef.current ?? "/movies"}>
+      <Link to={backLinkRef.current ?? "/movies"}>
         <ButtonBack />
       </Link>
 

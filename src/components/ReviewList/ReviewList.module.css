@@ -1,0 +1,27 @@
+.reviewsContainer {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reviewItem {
+  background-color: #2a0b1e;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem;
+  color: var(--text);
+  box-shadow: 0 0 10px rgba(245, 141, 207, 0.1);
+}
+
+.reviewItem:hover {
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.boldText {
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}

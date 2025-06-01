@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Loader from "../../components/Loader/Loader";
-import ErrorMessage from "../../components/Error/ErrorMessage";
 import { Link, Outlet, useParams } from "react-router-dom";
 import { fetchMovieDetails } from "../../API/fetchMovies";
-import s from "./MovieDetailsPage.module.css";
+import Loader from "../../components/Loader/Loader";
+import ErrorMessage from "../../components/Error/ErrorMessage";
 import ButtonBack from "../../components/ButtonBack/ButtonBack.jsx";
+import s from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState(null);
